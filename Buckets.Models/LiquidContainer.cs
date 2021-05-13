@@ -23,7 +23,7 @@ namespace Buckets.Models
         }
 
         public bool Fill(int amount) {
-            if (amount + Current > Capacity) {
+            if ((amount + Current) > Capacity) {
                 Console.WriteLine($"{Type} overflown! {Current} + {amount} > {Capacity} by this much: {(amount + Current) % Capacity} (cur:{Current}/cap:{Capacity})");
 
                 if (OverflowAction(amount + Current - Capacity) == true) {
