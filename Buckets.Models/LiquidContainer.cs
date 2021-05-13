@@ -44,11 +44,9 @@ namespace Buckets.Models
         public void Fill(int amount, LiquidContainer container) {
             if ((Current - amount) < 1) {
                 Console.WriteLine($"Not enough left({amount}) in {Type}({Current}) to fill {container.Type}({container.Current})");
-            } else {
-                if (container.Fill(amount)) {
+            } else if (container.Fill(amount)) {
                     Console.WriteLine($"{amount} added to {Type}{Current}");
                     Current -= amount;
-                }
             }
         }
 
