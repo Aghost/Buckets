@@ -26,10 +26,9 @@ namespace Buckets.Models
             if (amount + Current > Capacity) {
                 Console.WriteLine($"{Type} overflown! {Current} + {amount} > {Capacity} by this much: {(amount + Current) % Capacity} (cur:{Current}/cap:{Capacity})");
 
-                //Console.WriteLine(OverflowAction((amount + Current) - Capacity));
-                if (OverflowAction((amount + Current) - Capacity) == true) {
+                if (OverflowAction(amount + Current - Capacity) == true) {
                     Current = Capacity;
-                    Console.WriteLine($"ififelse: added {amount} to {Type}, capacity at {Current}/{Capacity}");
+                    Console.WriteLine($"ifif: added {amount} to {Type}, capacity at {Current}/{Capacity}");
                 } else {
                     Console.WriteLine("cancelled...");
                     return false;
@@ -43,7 +42,7 @@ namespace Buckets.Models
         }
 
         public void Fill(int amount, LiquidContainer container) {
-            if (Current - amount < 1) {
+            if ((Current - amount) < 1) {
                 Console.WriteLine($"Not enough left({amount}) in {Type}({Current}) to fill {container.Type}({container.Current})");
             } else {
                 if (container.Fill(amount)) {
@@ -60,7 +59,6 @@ namespace Buckets.Models
                 "cancel" => false,
                 _ => false 
             };
-            // return bool, option to cancel
         }
 
         public void Empty() {
