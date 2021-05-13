@@ -35,7 +35,7 @@ namespace Buckets.Models
                 }
             } else {
                 Current += amount;
-                Console.WriteLine($"ifelse: added {amount} to {Type}, capacity at {Current}/{Capacity}");
+                Console.WriteLine($"else: added {amount} to {Type}, capacity at {Current}/{Capacity}");
             }
 
             return true;
