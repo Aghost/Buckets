@@ -28,6 +28,7 @@ namespace Buckets.Models
 
                 if (OverflowAction(amount + Current - Capacity) == true) {
                     Current = Capacity;
+                    // overflow gets discarted TODO add option to add to other bucket?
                     Console.WriteLine($"ifif: added {amount} to {Type}, capacity at {Current}/{Capacity}");
                 } else {
                     Console.WriteLine("cancelled...");

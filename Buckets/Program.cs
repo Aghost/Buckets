@@ -1,6 +1,5 @@
 ﻿using System;
 using Buckets.Models;
-using static Buckets.Models.Bucket;
 using static System.Console;
 
 namespace Buckets
@@ -9,6 +8,16 @@ namespace Buckets
     {
         static void Main(string[] args)
         {
+            Bucket bucket = Bucket.CreateDefault();
+            bucket.GetStats();
+            bucket.Fill(18);
+            bucket.GetStats();
+            bucket.Empty();
+            bucket.GetStats();
+            //test123();
+        }
+
+        static void test123() {
             Bucket bucket = Bucket.CreateDefault(12);
             bucket.Fill(18);
             bucket.Empty();

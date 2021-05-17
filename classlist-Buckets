@@ -1,0 +1,9 @@
+Class		Properties		Methods		Events		Constructors
+----------------------------------------------------------------------------
+Container	Size(liter)		Fill(self)  ifOverFlow? Size, init_fill
+                            Fill(other)
+                            Empty
+
+Bucket		capacity=12(>10)
+Oil_Barrel	capacity=fixed(159)
+Rain_Barrel	capacity=80,100,120
